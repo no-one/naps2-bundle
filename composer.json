@@ -1,0 +1,22 @@
+{
+    "name": "noone/naps2-bundle",
+    "description": "Provides methods to work with NAPS2",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "no-one",
+            "homepage": "https://github.com/no-one/naps2-bundle",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4",
+        "symfony/process": "5.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "noone\\NAPS2Bundle\\": "src/"
+        }
+    }
+}
