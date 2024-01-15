@@ -11,8 +11,8 @@
         }
     ],
     "require": {
-        "php": "^7.4",
-        "symfony/process": "5.*"
+        "php": "^8.2",
+        "symfony/process": "^5.4"
     },
     "autoload": {
         "psr-4": {
