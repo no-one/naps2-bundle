@@ -5,16 +5,14 @@ use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
 
 /**
- * Class Scanner
- * @package noone\NAPS2Bundle
+ * Provides access to the CLI commands (see https://www.naps2.com/doc/command-line).
  */
 class Scanner
 {
-    /** @var array Command that will be executed */
-    private $command = [];
+    private array $command = [];
 
     /**
-     * Scanner constructor.
+     * @param string $path Path to the NAPS2 executable
      */
     public function __construct(string $path)
     {
@@ -42,7 +40,7 @@ class Scanner
      */
     public function setOutput(string $outputPath): Scanner
     {
-        \array_push($this->command, '-o', $outputPath);
+        $this->addCommand('-o', $outputPath);
 
         return $this;
     }
@@ -53,7 +51,7 @@ class Scanner
      */
     public function setProfile(string $profile): Scanner
     {
-        \array_push($this->command, '-p', $profile);
+        $this->addCommand('-p', $profile);
 
         return $this;
     }
@@ -63,8 +61,21 @@ class Scanner
      */
     public function force(): Scanner
     {
-        \array_push($this->command, '--force');
+        $this->addCommand('--force');
 
         return $this;
+    }
+
+    /**
+     * Adds a command to be executed.
+     */
+    private function addCommand($option, $value = null)
+    {
+        if (null === $value) {
+            $this->command[] = $option;
+        } else {
+            array_push($this->command, $option, $value);
+        }
+
     }
 }
