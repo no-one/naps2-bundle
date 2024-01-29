@@ -2,16 +2,16 @@
 namespace noone\NAPS2Bundle;
 
 /**
- * Class ScanResult
- * @package noone\NAPS2Bundle
+ * Provides access to the result of a scan.
  */
 class ScanResult
 {
-    private $output = '';
-    private $errorOutput = '';
+    private string $output = '';
+    private string $errorOutput = '';
 
     /**
-     * ScanResult constructor.
+     * @param string $output Content of the standard output
+     * @param string $errorOutput Content of the error output
      */
     public function __construct(string $output, string $errorOutput)
     {
