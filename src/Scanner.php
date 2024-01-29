@@ -69,7 +69,7 @@ class Scanner
     /**
      * Adds a command to be executed.
      */
-    private function addCommand($option, $value = null)
+    private function addCommand($option, $value = null): void
     {
         if (null === $value) {
             $this->command[] = $option;
