@@ -1,0 +1,3 @@
+services:
+    noone\NAPS2Bundle\Scanner:
+        public: true
