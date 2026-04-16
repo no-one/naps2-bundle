@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace noone\NAPS2Bundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;

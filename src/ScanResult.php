@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace noone\NAPS2Bundle;
 
 /**
@@ -6,8 +9,16 @@ namespace noone\NAPS2Bundle;
  */
 class ScanResult
 {
-    private string $output = '';
-    private string $errorOutput = '';
+    private string $output {
+        get {
+            return $this->output;
+        }
+    }
+    private string $errorOutput {
+        get {
+            return $this->errorOutput;
+        }
+    }
 
     /**
      * @param string $output Content of the standard output
@@ -19,13 +30,4 @@ class ScanResult
         $this->errorOutput = $errorOutput;
     }
 
-    public function getOutput(): string
-    {
-        return $this->output;
-    }
-
-    public function getErrorOutput(): string
-    {
-        return $this->errorOutput;
-    }
 }

@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace noone\NAPS2Bundle;
 
 use Symfony\Component\Process\Exception\ProcessFailedException;
@@ -22,7 +25,7 @@ class Scanner
     /**
      * Start the scanning process.
      */
-    public function run()
+    public function run(): ScanResult
     {
         $process = new Process($this->command);
         $process->run();
