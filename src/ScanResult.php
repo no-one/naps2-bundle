@@ -9,12 +9,12 @@ namespace noone\NAPS2Bundle;
  */
 class ScanResult
 {
-    private string $output {
+    public string $output {
         get {
             return $this->output;
         }
     }
-    private string $errorOutput {
+    public string $errorOutput {
         get {
             return $this->errorOutput;
         }
@@ -29,5 +29,4 @@ class ScanResult
         $this->output = $output;
         $this->errorOutput = $errorOutput;
     }
-
 }
